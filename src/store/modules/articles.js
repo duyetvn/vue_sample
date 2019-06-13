@@ -12,8 +12,8 @@ export const mutations = {
 }
 
 export const actions = {
-  setList ({ commit }) {
-    return articleList().then(response => {
+  setList ({ commit }, searchParams) {
+    return articleList(searchParams).then(response => {
       let artciles = response.data
       commit(SET_ARTICLE_LIST, artciles)
     }).catch(error => {

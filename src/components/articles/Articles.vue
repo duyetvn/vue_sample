@@ -1,5 +1,6 @@
 <template>
   <div id="articles">
+    <search></search>
     <ul>
       <article-item v-for="article in articles" v-bind:key="article.id" :article="article">
       </article-item>
@@ -9,12 +10,14 @@
 
 <script>
 import ArticleItem from './ArticleItem'
+import Search from './Search'
 import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'Articles',
   components: {
-    ArticleItem
+    ArticleItem,
+    Search
   },
   computed: {
     ...mapGetters({
